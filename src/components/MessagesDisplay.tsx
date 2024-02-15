@@ -1,10 +1,21 @@
 import React from "react";
 import MessageDisplay from "./MessageDisplay";
 
-const MessagesDisplay = () => {
+interface userMessage {
+  role: string;
+  content: string;
+}
+
+interface MessagesDisplayProps {
+  userMessages: userMessage[];
+}
+
+const MessagesDisplay = ({ userMessages }: MessagesDisplayProps) => {
   return (
     <div className="messages-display">
-      <MessageDisplay />
+      {userMessages.map((userMessage, _index) => (
+        <MessageDisplay key={_index} message={userMessage} />
+      ))}
     </div>
   );
 };
