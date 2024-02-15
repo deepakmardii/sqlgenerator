@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+# Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a web application enabling users to generate SQL queries via the OpenAI API. It encompasses both backend and frontend elements.
 
-## Available Scripts
 
-In the project directory, you can run:
+This project uses Express backend with the OpenAI API and a React frontend to build a user-friendly web app for generating SQL queries using user input. It allows message input, shows conversation history, and displays generated SQL code.
 
-### `npm start`
+## File Descriptions
+1. `.env` : Stores OpenAI API keys. This file is not included in the snippet but should be present in the project directory, containing an OPEN_API_KEY variable.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. `index.ts (Backend)` : TypeScript script setting up a server with Express framework to handle HTTP requests. It imports necessary modules and types, initializes the Express application, adds middleware for CORS and JSON parsing, configures the OpenAI API using the API key from environment variables, defines a route handler for POST requests to "/completions", and starts the server on port 8000.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+3. `App.tsx (Frontend)` : Defines the main React component of the application. It imports necessary modules and components, manages state for user input, chat messages, and code output. It defines functions for sending user messages to the server, clearing chat history, and filtering and retrieving the latest code message. It renders JSX elements representing the application structure.
 
-### `npm test`
+4. `index.css` : CSS file containing styling rules for the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. `CodeDisplay (Component)` : Exports a React component named CodeDisplay. It receives a text prop representing the code to be displayed and renders a code display area.
 
-### `npm run build`
+6. `MessageDisplay (Component)` : Exports a React component named MessageDisplay. It receives a message prop representing a chat message and renders a single chat message.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7. `MessagesDisplay (Component)` : Exports a React component named MessagesDisplay. It receives a userMessages prop representing an array of chat messages and renders a collection of chat messages.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Screenshots
+![1](https://github.com/deepakmardii/sqlgenerator/assets/67671892/8d1b8c83-419d-4959-b918-3f379c36cf7f)
+![2](https://github.com/deepakmardii/sqlgenerator/assets/67671892/bc5d7b2a-0693-463c-a220-a60aad9362e7)
+![3](https://github.com/deepakmardii/sqlgenerator/assets/67671892/d5942813-61a6-45a7-84c4-d9bd1f1a0d6e)
+![4](https://github.com/deepakmardii/sqlgenerator/assets/67671892/a06bfe01-06ab-45d2-9e42-d059f1dd99e4)
